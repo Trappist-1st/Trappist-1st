@@ -1,7 +1,7 @@
 <div align="center">
   
-  <!-- 动态打字效果 - 来自 https://github.com/DenverCoder1/readme-typing-svg -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A177FF&center=true&vCenter=true&width=940&lines=Hi+👋%2C+I'm+Roboute+Guilliman;Software+Engineering+Student;Passionate+Developer;Backend+%26+AI+Agent+Enthusiast" alt="Typing SVG" />
+  <!-- 动态打字效果 - 使用简化版本 -->
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=A177FF&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B+I'm+Roboute+Guilliman;Software+Engineering+Student;Backend+%26+AI+Enthusiast" alt="Typing SVG" /></a>
   
   <!-- Profile Views Counter -->
   <img src="https://komarev.com/ghpvc/?username=Trappist-1st&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile views" />
@@ -11,9 +11,9 @@
 ---
 
 ### 🏆 GitHub Trophies
-<!-- GitHub Trophies - 来自 https://github.com/ryo-ma/github-profile-trophy -->
+<!-- GitHub Trophies - 使用简化配置 -->
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Trappist-1st&theme=radical&no-frame=false&no-bg=false&margin-w=4&row=1" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Trappist-1st&theme=radical&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
 </p>
 
 ---
@@ -87,7 +87,7 @@
 
 ---
 
-### � About Me
+### 💫 About Me
 
 - 🔭 I'm currently working on **backend systems and agent development. This involves designing robust APIs and exploring the integration of large language models to build intelligent, task-driven agents.**
 
@@ -107,11 +107,19 @@
 
 ### 📊 GitHub Statistics
 
-<!-- GitHub Stats Cards - 来自 https://github.com/anuraghazra/github-readme-stats -->
+<!-- GitHub Stats Cards - 使用优化配置 -->
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Trappist-1st&show_icons=true&theme=radical&include_all_commits=true&count_private=true&hide_border=true" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Trappist-1st&layout=compact&langs_count=8&theme=radical&hide_border=true" alt="Top Languages"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Trappist-1st&show_icons=true&theme=radical&include_all_commits=true&count_private=true&hide_border=true&card_width=320" alt="GitHub Stats"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Trappist-1st&layout=compact&langs_count=8&theme=radical&hide_border=true&card_width=320" alt="Top Languages"/>
 </div>
+
+<!-- 备用方案：如果上面的卡片无法加载，请取消下面的注释 -->
+<!-- 
+<div align="center">
+  <img height="180em" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=Trappist-1st&show_icons=true&theme=radical&include_all_commits=true&count_private=true&hide_border=true" alt="GitHub Stats"/>
+  <img height="180em" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=Trappist-1st&layout=compact&langs_count=8&theme=radical&hide_border=true" alt="Top Languages"/>
+</div>
+-->
 
 <!-- GitHub Streak Stats - 来自 https://github.com/DenverCoder1/github-readme-streak-stats -->
 <div align="center">
