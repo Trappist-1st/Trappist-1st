@@ -27,14 +27,14 @@
 ```
 ┌─ SYSTEM IDENTITY ────────────────────────────────────────────────────┐
 │  Focus      : Distributed Systems · Backend Engineering · AI Agents  │
-│  Stack Core : Python · Java · TypeScript                             │
+│  Stack Core : Java · Python · TypeScript                             │
 │  Current    : Building intelligent agent infrastructure              │
 │  Pursuing   : Graduate research in LLMs and scalable systems         │
 │  Contact    : trappist.1st@gmail.com                                 │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-A systems engineer building robust, distributed backends today — while preparing the infrastructure for the next generation of intelligent systems. Interested in the intersection of large language models, autonomous agents, and the architecture required to run them at scale.
+A systems engineer building robust distributed backends — while preparing the infrastructure for the next generation of intelligent systems. Interested in the intersection of large language models, autonomous agents, and the architecture required to run them at scale.
 
 <br/>
 
@@ -44,83 +44,48 @@ A systems engineer building robust, distributed backends today — while prepari
 
 ## Featured Systems
 
-> *Selected projects. Architecture, decisions, and outcomes.*
+> *Selected projects — architecture, decisions, and outcomes.*
 
 <br/>
 
-<!-- PROJECT CARD 1 -->
+<!-- ─── PROJECT 1: Distributed Lite Scheduler ─── -->
 <table>
 <tr>
-<td width="60%">
+<td width="58%">
 
-### Distributed AI Agent Orchestrator
+### [Distributed Lite Scheduler](https://github.com/Trappist-1st/Distributed-Lite-Scheduler)
 
-A multi-agent coordination framework built on FastAPI and Kafka. Agents operate asynchronously across isolated execution environments, with a central planning layer that decomposes tasks into verifiable subtasks and routes them based on capability profiles.
+A production-grade lightweight distributed task scheduling platform for small-to-medium teams. Benchmarked against XXL-Job, Kubernetes Job Scheduler, and Apache Airflow — designed to be leaner and easier to operate than all three.
 
-**Engineering decisions:**
-- Stateless agent nodes enable horizontal scaling without coordination overhead
-- Event-driven task queue via Kafka decouples planning from execution
-- PostgreSQL-backed audit trail ensures every agent action is traceable and replayable
-
-**Outcomes:** Reduced end-to-end task latency by ~40% compared to synchronous agent loops in benchmarks.
-
-</td>
-<td width="40%" align="center">
-
-![Python](https://img.shields.io/badge/Python-0A0A14?style=flat-square&logo=python&logoColor=4FC3F7)
-![FastAPI](https://img.shields.io/badge/FastAPI-0A0A14?style=flat-square&logo=fastapi&logoColor=4FC3F7)
-![Kafka](https://img.shields.io/badge/Kafka-0A0A14?style=flat-square&logo=apachekafka&logoColor=9DCDE4)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-0A0A14?style=flat-square&logo=postgresql&logoColor=9DCDE4)
-![Docker](https://img.shields.io/badge/Docker-0A0A14?style=flat-square&logo=docker&logoColor=4FC3F7)
-![LangChain](https://img.shields.io/badge/LangChain-0A0A14?style=flat-square&logo=langchain&logoColor=9DCDE4)
-
-```
-Throughput    ████████████████  High
-Fault Tolerance ██████████████  Strong
-Test Coverage ████████████░░░░  Good
-```
-
-[![Repo](https://img.shields.io/badge/→_View_Repository-1C2A4A?style=flat-square&logoColor=4FC3F7)](https://github.com/Trappist-1st)
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-<!-- PROJECT CARD 2 -->
-<table>
-<tr>
-<td width="60%">
-
-### High-Throughput Backend API Platform
-
-A production-grade REST/gRPC backend built with Spring Boot, designed for high-concurrency workloads. Features an adaptive rate-limiting layer, distributed caching with Redis, and a circuit breaker pattern for resilient inter-service communication.
+**Architecture highlights:**
+- Multi-instance Scheduler layer with Redis-based distributed lock for automatic leader election — zero single-point-of-failure
+- DAG workflow engine for complex task dependency resolution
+- Resource-aware scheduling: CPU/GPU/memory quotas enforced at dispatch time, preventing task starvation under load
+- Multi-tenant resource isolation with per-tenant quota management
+- Pluggable executor model: Shell / Python / Docker / HTTP
 
 **Engineering decisions:**
-- gRPC for internal service communication reduces serialization overhead vs. JSON
-- Redis Cluster for session management and hot-path data caching
-- Observability-first design: distributed tracing, structured logging, and Grafana dashboards from day one
-
-**Outcomes:** Sustained 10k+ concurrent requests in load testing with sub-100ms P99 latency.
+- Optimistic locking + idempotency keys on all state transitions ensure exactly-once execution semantics
+- Async processing pipeline with Redis task queue decouples scheduling decisions from executor availability
+- Spring Cloud Gateway as API surface — rate limiting, circuit breaking, and distributed tracing from the start
 
 </td>
-<td width="40%" align="center">
+<td width="42%" align="center">
 
 ![Java](https://img.shields.io/badge/Java-0A0A14?style=flat-square&logo=openjdk&logoColor=4FC3F7)
-![Spring](https://img.shields.io/badge/Spring_Boot-0A0A14?style=flat-square&logo=springboot&logoColor=9DCDE4)
+![Spring](https://img.shields.io/badge/Spring_Boot_4-0A0A14?style=flat-square&logo=springboot&logoColor=9DCDE4)
 ![Redis](https://img.shields.io/badge/Redis-0A0A14?style=flat-square&logo=redis&logoColor=4FC3F7)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-0A0A14?style=flat-square&logo=kubernetes&logoColor=9DCDE4)
-![Nginx](https://img.shields.io/badge/Nginx-0A0A14?style=flat-square&logo=nginx&logoColor=4FC3F7)
-![Grafana](https://img.shields.io/badge/Grafana-0A0A14?style=flat-square&logo=grafana&logoColor=9DCDE4)
+![MySQL](https://img.shields.io/badge/MySQL-0A0A14?style=flat-square&logo=mysql&logoColor=9DCDE4)
+![Docker](https://img.shields.io/badge/Docker-0A0A14?style=flat-square&logo=docker&logoColor=4FC3F7)
 
 ```
-Latency P99   ████████████████  <100ms
-Concurrency   ██████████████░░  10k rps
-Observability ████████████████  Full
+High Availability  ████████████████  HA
+Resource-Aware     ████████████████  ✓
+DAG Support        ██████████████░░  ✓
+Multi-tenant       ████████████████  ✓
 ```
 
-[![Repo](https://img.shields.io/badge/→_View_Repository-1C2A4A?style=flat-square&logoColor=4FC3F7)](https://github.com/Trappist-1st)
+[![Repo](https://img.shields.io/badge/→_View_Repository-1C2A4A?style=flat-square)](https://github.com/Trappist-1st/Distributed-Lite-Scheduler)
 
 </td>
 </tr>
@@ -128,42 +93,152 @@ Observability ████████████████  Full
 
 <br/>
 
-<!-- PROJECT CARD 3 -->
+<!-- ─── PROJECT 2: AstroGuide ─── -->
 <table>
 <tr>
-<td width="60%">
+<td width="58%">
 
-### LLM Evaluation & Fine-Tuning Pipeline
+### [AstroGuide — Intelligent Astronomy Platform](https://github.com/Trappist-1st/AstroGuide----An-Intelligent-Astronomy-Knowledge-Platform-backend-)
 
-An end-to-end pipeline for evaluating open-source LLMs on domain-specific tasks and preparing supervised fine-tuning datasets. Integrates with HuggingFace Transformers, supports LoRA adapters, and outputs structured evaluation reports.
+An AI-powered astronomy knowledge platform backend. Combines RAG, tool-calling, and real-time streaming to deliver expert-level responses on undergraduate astronomy content.
+
+**Architecture highlights:**
+- RAG pipeline: knowledge vectorized and stored in Qdrant; retrieved at query time and injected into prompt context
+- SSE (Server-Sent Events) streaming endpoint for real-time AI response delivery with sub-second first-token latency
+- Tool-calling layer integrates Wikipedia search, vector knowledge base queries, and concept card lookups — model selects tools autonomously or via explicit user directives (`@wiki:`, `@kb:`, `@card:`)
+- Configurable advisor chain: Memory + RAG + Wikipedia advisors compose in runtime, each independently toggleable
 
 **Engineering decisions:**
-- Modular evaluator interface allows swapping benchmark suites without touching training code
-- LoRA fine-tuning reduces GPU memory requirements to run experiments on consumer hardware
-- Automated dataset validation catches distribution drift before training begins
-
-**Outcomes:** Achieved 18% improvement over base model on held-out domain evaluation set.
+- OpenAI-compatible API abstraction layer allows hot-swapping between DeepSeek, SiliconFlow, and other providers without code changes
+- Per-tool disable flag on explicit invocations prevents duplicate calls when the user prefetches a tool result manually
+- Session-scoped conversation history enables coherent multi-turn dialogue without client-side state management
 
 </td>
-<td width="40%" align="center">
+<td width="42%" align="center">
 
-![Python](https://img.shields.io/badge/Python-0A0A14?style=flat-square&logo=python&logoColor=4FC3F7)
-![PyTorch](https://img.shields.io/badge/PyTorch-0A0A14?style=flat-square&logo=pytorch&logoColor=9DCDE4)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-0A0A14?style=flat-square&logo=huggingface&logoColor=4FC3F7)
-![Jupyter](https://img.shields.io/badge/Jupyter-0A0A14?style=flat-square&logo=jupyter&logoColor=9DCDE4)
-![AWS](https://img.shields.io/badge/AWS-0A0A14?style=flat-square&logo=amazonaws&logoColor=4FC3F7)
+![Java](https://img.shields.io/badge/Java-0A0A14?style=flat-square&logo=openjdk&logoColor=4FC3F7)
+![Spring](https://img.shields.io/badge/Spring_AI_1.1-0A0A14?style=flat-square&logo=springboot&logoColor=9DCDE4)
+![MySQL](https://img.shields.io/badge/MySQL-0A0A14?style=flat-square&logo=mysql&logoColor=4FC3F7)
+![Qdrant](https://img.shields.io/badge/Qdrant-0A0A14?style=flat-square&logoColor=9DCDE4)
+![Docker](https://img.shields.io/badge/Docker-0A0A14?style=flat-square&logo=docker&logoColor=4FC3F7)
 
 ```
-Model Accuracy  ██████████████░░  +18% gain
-Pipeline Steps  ████████████████  Automated
-Reprod.         ████████████████  Full
+RAG Pipeline       ████████████████  ✓
+SSE Streaming      ████████████████  ✓
+Tool Calling       ██████████████░░  ✓
+Session Memory     ████████████████  ✓
 ```
 
-[![Repo](https://img.shields.io/badge/→_View_Repository-1C2A4A?style=flat-square&logoColor=4FC3F7)](https://github.com/Trappist-1st)
+[![Repo](https://img.shields.io/badge/→_View_Repository-1C2A4A?style=flat-square)](https://github.com/Trappist-1st/AstroGuide----An-Intelligent-Astronomy-Knowledge-Platform-backend-)
 
 </td>
 </tr>
 </table>
+
+<br/>
+
+<!-- ─── PROJECT 3: Deep Research Agent ─── -->
+<table>
+<tr>
+<td width="58%">
+
+### [Deep Research Agent](https://github.com/Trappist-1st/Deep-Research-Agent)
+
+An autonomous AI agent that conducts deep multi-source research and generates structured reports. Given a query, it plans, crawls, analyses, and writes — without human intervention at any step.
+
+**Architecture highlights:**
+- Four-stage pipeline: `planner.py` → `crawler.py` → `analyzer.py` → `report.py` — each stage is independently testable and replaceable
+- Parallelized web crawling with Selenium headless Chrome; automatic quality filtering rejects low-signal pages before analysis
+- Multi-modal analysis: text via o3-mini for summarization; screenshot capture + vision model for tables and figures that can't be parsed as text
+- Outline-first report generation: LLM builds a hierarchical section structure with weighted priorities before writing any prose
+
+**Engineering decisions:**
+- Separating planning from execution (distinct `planner.py` / `research_agent.py`) keeps the agent loop auditable — every search decision is traceable back to an explicit plan step
+- Source citation embedded throughout generation, not appended at the end — ensures claims remain grounded even during iterative rewrites
+
+</td>
+<td width="42%" align="center">
+
+![Python](https://img.shields.io/badge/Python-0A0A14?style=flat-square&logo=python&logoColor=4FC3F7)
+![OpenAI](https://img.shields.io/badge/OpenAI_o3-0A0A14?style=flat-square&logo=openai&logoColor=9DCDE4)
+![Selenium](https://img.shields.io/badge/Selenium-0A0A14?style=flat-square&logo=selenium&logoColor=4FC3F7)
+![Google](https://img.shields.io/badge/Google_Search_API-0A0A14?style=flat-square&logo=google&logoColor=9DCDE4)
+
+```
+Autonomy           ████████████████  Full
+Multi-modal        ██████████████░░  ✓
+Source-grounded    ████████████████  ✓
+Parallelised       ████████████████  ✓
+```
+
+[![Repo](https://img.shields.io/badge/→_View_Repository-1C2A4A?style=flat-square)](https://github.com/Trappist-1st/Deep-Research-Agent)
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<!-- ─── PROJECT 4: Multimodal AI Assistant ─── -->
+<table>
+<tr>
+<td width="58%">
+
+### [Multimodal AI Assistant](https://github.com/Trappist-1st/Multimodal-AI-Assistant)
+
+A real-time voice conversation system with speech-to-text, LLM inference, and text-to-speech in a single low-latency pipeline. Supports multiple languages with minimal perceptible delay.
+
+**Architecture highlights:**
+- WebSocket-based full-duplex audio stream between browser and Node.js backend — no HTTP polling, no round-trip overhead
+- `audioWorklet.js` runs in the browser's audio thread for Voice Activity Detection (VAD), sending only speech segments — reduces upstream bandwidth and LLM prompt noise
+- LLaMA inference integrated server-side; response text piped directly into TTS synthesis before the full reply is complete (streaming TTS)
+
+**Engineering decisions:**
+- Decoupling VAD into the AudioWorklet (off main thread) prevents UI jank during continuous recording
+- Next.js frontend with Tailwind CSS keeps the interface latency-free; no heavy state management framework needed for a single-session voice app
+- Real-time latency monitoring logged per-session — latency data used to tune VAD silence threshold and chunk sizes
+
+</td>
+<td width="42%" align="center">
+
+![TypeScript](https://img.shields.io/badge/TypeScript-0A0A14?style=flat-square&logo=typescript&logoColor=4FC3F7)
+![Node.js](https://img.shields.io/badge/Node.js-0A0A14?style=flat-square&logo=nodedotjs&logoColor=9DCDE4)
+![Next.js](https://img.shields.io/badge/Next.js-0A0A14?style=flat-square&logo=nextdotjs&logoColor=4FC3F7)
+![Tailwind](https://img.shields.io/badge/Tailwind-0A0A14?style=flat-square&logo=tailwindcss&logoColor=9DCDE4)
+
+```
+Latency            ██████████████░░  Low
+Streaming TTS      ████████████████  ✓
+VAD (off-thread)   ████████████████  ✓
+Multilingual       ████████████████  ✓
+```
+
+[![Repo](https://img.shields.io/badge/→_View_Repository-1C2A4A?style=flat-square)](https://github.com/Trappist-1st/Multimodal-AI-Assistant)
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<!-- ─── Additional Projects ─── -->
+
+<details>
+<summary><b>More Projects</b></summary>
+
+<br/>
+
+**[Message Broker](https://github.com/Trappist-1st/message-broker)** — A self-built publish/subscribe message middleware from scratch in Java using raw sockets. No frameworks — pure protocol design, Broker server, and a client SDK. Includes throughput/latency/fanout benchmarks. A systems-fundamentals exercise in network programming and concurrent state management.
+
+`Java` `Raw Sockets` `Pub/Sub` `Maven`
+
+<br/>
+
+**[Halo CE TCG — Game Engine](https://github.com/Trappist-1st/Halo-Combat-Evolved-TCG)** — A TCP-networked trading card game engine built in Java. Implements a full event bus + listener pipeline, damage resolution with a modifier stack, DAG-like phase state machine (`DRAW → DEPLOY → SKIRMISH → ENDSTEP`), multi-room server with JSON-over-TCP command protocol, and a client SDK. A game rules engine is a strict distributed state synchronisation problem in disguise.
+
+`Java` `TCP Networking` `Event Bus` `State Machine` `Maven`
+
+</details>
 
 <br/>
 
